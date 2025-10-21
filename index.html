@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - [Seu Nome]</title>
+    
+    <style>
+        /* --- Configurações Globais --- */
+        :root {
+            --cor-primaria: #0a2342; /* Azul escuro */
+            --cor-secundaria: #007BFF; /* Azul brilhante (links) */
+            --cor-fundo: #f4f7f6;
+            --cor-cartao: #ffffff;
+            --cor-texto: #333;
+            --cor-texto-claro: #f1f1f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 10px;
+        }
+
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 5px; }
+        h3 { font-size: 1.5em; }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Cabeçalho e Navegação --- */
+        .cabecalho {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-claro);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .cabecalho h1 {
+            color: var(--cor-texto-claro);
+            margin: 0;
+        }
+
+        .cabecalho p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .navegacao {
+            background-color: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navegacao ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navegacao li {
+            margin: 0 15px;
+        }
+
+        .navegacao a {
+            color: var(--cor-texto-claro);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .navegacao a:hover {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+        }
+
+        /* --- Seções (Cartões) --- */
+        .secao {
+            background-color: var(--cor-cartao);
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Seção Habilidades --- */
+        .lista-habilidades {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .lista-habilidades li {
+            background-color: var(--cor-fundo);
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        /* --- Seção Projetos --- */
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .projeto {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fafafa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .projeto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .projeto img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ccc; /* Placeholder se não houver imagem */
+        }
+
+        .projeto-info {
+            padding: 20px;
+        }
+
+        .projeto-info p {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        
+        .projeto-links a {
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* --- Seção Contato --- */
+        .lista-contato {
+            list-style: none;
+            font-size: 1.1em;
+        }
+        
+        .lista-contato li {
+            margin-bottom: 10px;
+        }
+        
+        .lista-contato strong {
+            color: var(--cor-primaria);
+        }
+
+        /* --- Rodapé --- */
+        .rodape {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>[Ednaldo maciel da silva]</h1>
+        <p>Estudante de Ciência da Computação | Desenvolvedor de Software</p>
+    </header>
+
+    <nav class="navegacao">
+        <ul>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="sobre" class="secao">
+            <h2>Sobre Mim</h2>
+            <p>
+                Olá! Eu sou Ednaldo, um estudante de Ciência da Computação no Centro universitario de ensino superior do Amazonas.
+                Sou apaixonado por resolver problemas complexos e criar tecnologia que impacta positivamente a vida das pessoas.
+                Atualmente, estou focando meus estudos em [Sua Área de Interesse, ex: Inteligência Artificial, Desenvolvimento Web, Segurança].
+            </p>
+            <p>
+                Estou buscando oportunidades de estágio ou projetos freelancer onde eu possa aplicar
+                meu conhecimento e aprender com profissionais experientes.
+            </p>
+        </section>
+
+        <section id="habilidades" class="secao">
+            <h2>Habilidades Técnicas</h2>
+            
+            <h3>Linguagens de Programação</h3>
+            <ul class="lista-habilidades">
+                <li>Python</li>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>C/C++</li>
+                <li>SQL</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">Frameworks e Bibliotecas</h3>
+            <ul class="lista-habilidades">
+                <li>React</li>
+                
+            </ul>
+
+            <h3 style="margin-top: 20px;">Ferramentas e Outros</h3>
+            <ul class="lista-habilidades">
+                <li>Git & GitHub</li>
+                <li>Docker</li>
+                <li>Linux</li>
+                <li>PostgreSQL</li>
+                <li>Figma</li>
+            </ul>
+        </section>
+
+        <section id="projetos" class="secao">
+            <h2>Meus Projetos</h2>
+            
+            <div class="grid-projetos">
+
+                <article class="projeto">
+                    <div class="projeto-info">
+                        <h3>Nome do Projeto 1 (Ex: App de Tarefas)</h3>
+                        <p>
+                            Uma breve descrição do que o projeto faz, o problema que ele resolve
+                            e o seu papel no desenvolvimento (ex: foi um projeto individual, em grupo, etc.).
+                        </p>
+                        <p><strong>Tecnologias:</strong> React, Node.js, MongoDB</p>
+                        <div class="projeto-links">
+                            <a href="[LINK DO SEU GITHUB]" target="_blank">Código (GitHub)</a>
+                            <a href="[LINK DA DEMO ONLINE, SE TIVER]" target="_blank">Demo ao Vivo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projeto">
+                    <div class="projeto-info">
+                        <h3>Nome do Projeto 2 (Ex: API de E-commerce)</h3>
+                        <p>
+                            Desenvolvimento de uma API RESTful para um sistema de e-commerce,
+                            implementando autenticação JWT e operações CRUD para produtos e usuários.
+                        </p>
+                        <p><strong>Tecnologias:</strong> Java, Spring Boot, PostgreSQL</p>
+                        <div class="projeto-links">
+                            <a href="[LINK DO SEU GITHUB]" target="_blank">Código (GitHub)</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="projeto">
+                    <div class="projeto-info">
+                        <h3>Nome do Projeto 3 (Ex: Análise de Dados)</h3>
+                        <p>
+                            Análise de um conjunto de dados públicos sobre [Tema], utilizando Python
+                            para limpeza, visualização de dados e criação de um modelo de machine learning.
+                        </p>
+                        <p><strong>Tecnologias:</strong> Python, Pandas, Matplotlib</p>
+                        <div class="projeto-links">
+                            <a href="[LINK DO SEU GITHUB]" target="_blank">Código (GitHub)</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div> </section>
+
+        <section id="contato" class="secao">
+            <h2>Vamos Conversar!</h2>
+            <p>Estou sempre aberto a novas oportunidades e conexões.</p>
+            
+            <ul class="lista-contato">
+                <li><strong>Email:</strong> <a href="mailto:seu.email@exemplo.com">seu.email@exemplo.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/seu-usuario" target="_blank">linkedin.com/in/seu-usuario</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/seu-usuario" target="_blank">github.com/seu-usuario</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2025 [Seu Nome Completo]. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
